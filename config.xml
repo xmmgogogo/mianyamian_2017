@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!--
+
+#节点管理器信息
+nodemgr_ip			节点管理器ip
+nodemgr_port		节点管理器监听端口
+nodemgr_name		节点管理器名字，小于128字节的字符串，不能为 "selfnode"
+
+
+#节点集群信息
+magic_number		魔法数字，小于128字节的字符串
+
+
+-->
+
+<node_cluster
+	nodemgr_ip="172.17.0.72"
+	nodemgr_port="7690"
+	nodemgr_name="game_nodemgr"
+	magic_number="abcdef0981__+~~!#"
+	>
+</node_cluster>
