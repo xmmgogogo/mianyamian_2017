@@ -6,3 +6,5 @@ foreach($xml->attributes() as $a => $b)
 {
     echo $a,'="',$b,'"';
 }
+
+

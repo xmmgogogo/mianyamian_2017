@@ -36,5 +36,16 @@ class cache {
     }
 }
 
-$cache = new cache(new memcache());
-$cache->add('aaaa');
+// $cache = new cache(new memcache());
+// $cache->add('aaaa');
+
+
+$array = [0, 1, 2];
+$ref =& $array; // Necessary to trigger the old behavior
+foreach ($array as $val) {
+    var_dump($val);
+    unset($array[1]);
+}
+
+
+var_dump(file('http://www.baidu.com'));
