@@ -1,0 +1,55 @@
+github同步密钥：cca9ed9ae4950997989a17ce58ba0eb9cc446647
+
+
+
+下载文件：
+
+VISUAL STUDIO CODE SETTINGS SYNC 
+Version: 2.6.2
+
+Upload Summary
+
+--------------------
+GITHUB TOKEN: cca9ed9ae4950997989a17ce58ba0eb9cc446647
+GITHUB GIST: 45c4557275c97bbbc578588007ba0b8f
+GITHUB GIST TYPE: Secret
+
+--------------------
+
+If current theme / file icon extension is not installed. Restart will be Required to Apply Theme and File Icon.
+
+
+Files Upload.
+
+extensions.json
+settings.json
+vsicons.settings.json
+
+
+EXTENSIONS ADDED :
+
+beautify - Version :1.0.2
+code-runner - Version :0.6.16
+code-settings-sync - Version :2.6.2
+cpptools - Version :0.11.0
+ftp-simple - Version :0.4.16
+ftp-sync - Version :0.3.3
+html-snippets - Version :0.1.0
+jquerysnippets - Version :0.0.1
+Lua - Version :0.0.9
+lualint - Version :0.0.5
+open-html-in-browser - Version :0.0.7
+path-intellisense - Version :1.2.0
+php-debug - Version :1.10.0
+php-formatter - Version :0.2.4
+php-intellisense - Version :1.2.1
+phpcs - Version :0.7.0
+prettify-json - Version :0.0.3
+prettify-selected-json - Version :1.0.2
+python - Version :0.6.3
+vscode-html-css - Version :0.1.2
+vscode-icons - Version :7.6.0
+vscode-JS-CSS-HTML-formatter - Version :0.2.3
+vscode-lua - Version :0.1.2
+vscode-npm - Version :3.3.0
+vscode-sort-json - Version :1.9.0
