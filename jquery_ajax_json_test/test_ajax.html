@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+<script type="text/javascript">
+    $(function(){
+        //按钮单击时执行
+        $("#testAjax").click(function(){
+		/*
+              $.get("test_ajax.php", function(result){
+				console.log(result);
+				
+				result = eval('(' + result + ')');
+				console.log(result[0]);
+			  });
+			  
+			 */
+
+	   $.ajax({
+				//提交数据的类型 POST GET
+				type:"POST",
+				//提交的网址
+				url:"test_ajax.php",
+				//提交的数据
+				//data:{Name:"sanmao",Password:"sanmaoword"},
+				//返回数据的格式
+				dataType: "json",//"xml", "html", "script", "json", "jsonp", "text".
+				//在请求之前调用的函数
+				beforeSend:function(){},
+				//成功返回之后调用的函数             
+				success:function(data){    
+					console.log(data);			
+				} ,
+				//调用执行后调用的函数
+				complete: function(XMLHttpRequest, textStatus){
+				   //console.log(XMLHttpRequest.responseText);
+				   console.log(textStatus);
+				},
+				//调用出错执行的函数
+				error: function(){
+					//请求出错处理
+				}         
+			 });
+  
+         });
+    });
+</script>    
+</head>
+    <body>
+        <div id="myDiv"><h2>通过 AJAX 改变文本</h2></div>
+        <button id="testAjax" type="button">Ajax改变内容</button>
+    </body>
+</html>
