@@ -1,5 +1,12 @@
 <?php
 
+/** 
+	1，先打开https://www.lagou.com
+	2，搜索相应的职位，设置好薪水，工作地点，学历，行业等
+	3，打开FF/chorme浏览器，打开F12，查看网络，选中XHR
+	4，选中postionAjax这一行，拷贝url粘贴到下面的配置，运行即可
+*/
+
 //----------------------------设置查询内容START-----------------------------
 $php_search_url = 'https://www.lagou.com/jobs/positionAjax.json?gj=5-10%E5%B9%B4&px=default&city=%E4%B8%8A%E6%B5%B7&needAddtionalResult=false';
 //$php_search_url = 'https://www.lagou.com/jobs/positionAjax.json?gj=5-10%E5%B9%B4&xl=%E7%A1%95%E5%A3%AB&px=default&city=%E4%B8%8A%E6%B5%B7&needAddtionalResult=false';
