@@ -1,0 +1,16 @@
+17年待研究解决问题列表：
+-----------------------------------------------------
+
+1，配置Apache的虚拟服务器 VirtualHost
+
+2，define('IS_CGI', (false !== strpos(PHP_SAPI, 'cgi')) ? 1 : 0);
+	模式判断
+	* 命令行执行 cli
+	* PHP server 执行 - cli-server
+	* wamp 执行 - ApacheHandel
+
+3，
+
+4，
+
+5，
