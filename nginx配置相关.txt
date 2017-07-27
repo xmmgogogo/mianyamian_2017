@@ -1,0 +1,8 @@
+nginx
+
+url 匹配规则：
+
+location / {
+    try_files $uri $uri/ /index.php?$args;
+    index index.php;
+}

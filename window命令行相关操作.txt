@@ -1,0 +1,5 @@
+1，创建软连接
+	> mklink /D "C:\Program Files (x86)\Microsoft Visual Studio 14.0"  "d:\Program Files (x86)\Microsoft Visual Studio 14.0"
+	
+2，删除命令
+	> del xxx

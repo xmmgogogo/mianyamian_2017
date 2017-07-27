@@ -1,0 +1,15 @@
+1，df -h -m | 查看磁盘可用
+   > disk free
+   
+2，du -m
+   > disk used
+
+3，free -m  | 查看内存使用
+
+4，find -name "*.php"  | 找文件
+
+5， curl ipinfo.io
+	curl ip.cn
+	curl myip.ipip.net
+
+6，	

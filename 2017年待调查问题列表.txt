@@ -1,0 +1,61 @@
+----------------------------------------------------------------------------------------------------------
+								17年待研究解决问题列表：
+----------------------------------------------------------------------------------------------------------
+
+1，（已了解）配置Apache的虚拟服务器 VirtualHost
+
+2，（已了解）define('IS_CGI', (false !== strpos(PHP_SAPI, 'cgi')) ? 1 : 0);
+	
+	模式判断
+	* 命令行执行 cli
+	* PHP server 执行 - cli-server
+	* wamp 执行 - ApacheHandel
+
+3，thrift调查 - thrift源码研究－transport类体系研究总结
+公司项目用了compser 的thrift - tssockt 连Java的队列机器。
+	> 初步用nodejs 调试了nodejs
+
+4，guzzle调查，symfony_httpfoundation调查
+
+5，（已了解）form设置了enctype="multipart/form-data" 属性后，就是2进制传输数据了
+PHP只会当为enctype默认application/x-www-form才将值写入POST，所以POST就得不到值了。
+'php://input'，可以读取任何除了"multipart/form-data"
+
+5，怎样用通俗的语言解释REST，以及RESTful？
+一套后端程序，支持多个客户端（手机，电脑，pad）
+
+6，beanstalk消息队列，RabbitMQ
+
+7，高性能离不开异步，异步离不开队列，而其内部都是Producer-Comsumer模式的原理。
+
+9，（已了解）二进制通信协议和文本协议。
+从某种意义来讲，文本协议天生具有兼容和可扩展性。不像二进制需要考虑那么多问题。文本协议易于调试（如抓包就是可见字符，telnet即可调试，数据包可以手工生成不借助特殊工具），简单易学是其最强大的优势。二进制协议优势就是性能和安全性。但是调试麻烦。
+
+	> 文本协议一般是由一串ACSII字符组成的数据，这些字符包括数字，大小写字母、百分号，还有回车(\r)，换行(\n)以及空格等等。
+	> 2进制协议就是一串字节流，通常包括消息头(header)和消息体(body)，消息头的长度固定，并且消息头包括了消息体的长度。这样就能够从数据流中解析出一个完整的二进制数据。
+
+		* HTTP协议，这可能是大家接触得最多的协议了，HTTP协议是一个比较简单的基于文本的协议。
+		* memcached协议：memcached有两种协议，文本协议和二进制协议
+		* redis协议：redis的协议也是文本协议
+
+10，electron桌面应用开发
+
+11，（已了解）Protocol Buffer
+	> 一种数据交换格式，跟xml类似，据行业说，体积减少3倍，快20倍
+	
+12，（已了解）APC，全称是Alternative PHP Cache，类似redis和memcache需要安装PHP扩展，然后调用类似，apc_get 不需要连接客户端，直接使用；但redis提供了更丰富的数据结构。	
+	现在已经被opcache替代。
+	
+13，libevent事件轮询库
+
+14，下载PHP源码，进行简单的了解。
+
+15，下载Redis源码，进行简单的了解。
+
+16，
+
+
+
+
+
+

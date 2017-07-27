@@ -1,0 +1,15 @@
+1，路由设计：handle[pathname]();
+	var handle = {}
+	handle["/"] = requestHandlers.start;
+	handle["/start"] = requestHandlers.start;
+	handle["/upload"] = requestHandlers.upload;
+	
+	
+2，
+
+3，
+
+4，
+
+5，	
+	

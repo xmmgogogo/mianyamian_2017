@@ -1,0 +1,21 @@
+mysql注入 - test' or 1='1
+
+1，show processlist;
+	> 查看全部执行的命令
+	
+2，explain select * from right_table;
+
+3，inner join vs left join vs right join
+	> inner join 跟 where id=id 效率基本一致
+
+4，嵌套查询
+	> select * from left_table where name in (select name from right_table);	
+	
+5，union 和 union all 
+	> union 会进行重复的内容筛选
+	> union all 不会筛选重复，这样直接合并表，效率提高。
+	
+6，mysql 访问本地系统：mysql -h127.0.0.1
+
+7，
+
