@@ -1,3 +1,18 @@
+CREATE TABLE `MYSQL tinyint smallint mediumint int bigint 备忘录` (
+  `tinyint` tinyint(3) unsigned NOT NULL DEFAULT 0 COMMENT 'tinyint：1字节 不带符号：0~255',
+  `smallint` smallint(5) unsigned NOT NULL DEFAULT 0 COMMENT 'smallint：2字节 不带符号：0~65535',
+  `mediumint` mediumint(8) unsigned NOT NULL DEFAULT 0 COMMENT 'mediumint：3字节 不带符号：0~16777215',
+  `int` int(10) unsigned NOT NULL DEFAULT 0 COMMENT 'int：4字节 不带符号：0~4294967295',
+  `bigint` bigint(20) unsigned NOT NULL DEFAULT 0 COMMENT 'bigint：8字节 不带符号：0~18446744073709551615',
+  `tinyint` tinyint(4) NOT NULL DEFAULT 0 COMMENT 'tinyint：1字节 带符号：-128~127',
+  `smallint` smallint(6) NOT NULL DEFAULT 0 COMMENT 'smallint：2字节 带符号：-32768~32767',
+  `mediumint` mediumint(8) NOT NULL DEFAULT 0 COMMENT 'mediumint：3字节 带符号：-8388608~8388607',
+  `int` int(11) NOT NULL DEFAULT 0 COMMENT 'int：4字节 带符号：-2147483648~2147483647',
+  `bigint` bigint(20) NOT NULL DEFAULT 0 COMMENT 'bigint：8字节 带符号：-9223372036854775808~9233372036854775807',
+) ENGINE=MYSQL COMMENT='MYSQL tinyint smallint mediumint int bigint 备忘录';
+
+---------------------------------------------------------------------
+
 mysql注入 - test' or 1='1
 
 1，show processlist;
@@ -18,4 +33,7 @@ mysql注入 - test' or 1='1
 6，mysql 访问本地系统：mysql -h127.0.0.1
 
 7，
+
+
+
 
