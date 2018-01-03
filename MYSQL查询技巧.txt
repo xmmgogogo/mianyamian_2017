@@ -32,7 +32,12 @@ mysql注入 - test' or 1='1
 	
 6，mysql 访问本地系统：mysql -h127.0.0.1
 
-7，
+-----------------------------------------------------------------------
+
+插入数据库的三种做法。
+insert into table_name -> 插入表
+insert ignore into table_name -> 插入表，但不会报错，如果存在重复键则忽略掉
+replace into table_name -> 插入表，如果存在重复键则替换掉
 
 
 

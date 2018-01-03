@@ -1,0 +1,160 @@
+////////////////目前的数据格式/////////////////////////
+
+{
+    "button": [
+        {
+            "name": "塔防项目", 
+            "sub_button": [
+                {
+                    "type": "click", 
+                    "name": "平台查看", 
+                    "key": "td_plantform_list", 
+                    "sub_button": [ ]
+                }
+            ]
+        }, 
+        {
+            "name": "大查柜", 
+            "sub_button": [
+                {
+                    "type": "click", 
+                    "name": "异常查询", 
+                    "key": "dcg_error_list", 
+                    "sub_button": [ ]
+                }, 
+                {
+                    "type": "click", 
+                    "name": "空间查询", 
+                    "key": "dcg_df_m", 
+                    "sub_button": [ ]
+                }
+            ]
+        }, 
+        {
+            "name": "帮助", 
+            "sub_button": [
+                {
+                    "type": "click", 
+                    "name": "计划", 
+                    "key": "plan_list", 
+                    "sub_button": [ ]
+                }
+            ]
+        }
+    ]
+}
+
+
+{
+	"button": [
+		{
+			"name": "平台充值", 
+			"sub_button": [
+				{
+					"type": "click", 
+					"name": "FB平台", 
+					"key": "day_1", 
+					"sub_button": [ ]
+				}, 
+				{
+					"type": "click", 
+					"name": "AG平台", 
+					"key": "a_day_1", 
+					"sub_button": [ ]
+				}, 
+				{
+					"type": "click", 
+					"name": "KG平台", 
+					"key": "k_day_1", 
+					"sub_button": [ ]
+				}, 
+				{
+					"type": "click", 
+					"name": "DE平台", 
+					"key": "de_day_1", 
+					"sub_button": [ ]
+				}, 
+				{
+					"type": "click", 
+					"name": "FR平台", 
+					"key": "fr_day_1", 
+					"sub_button": [ ]
+				}
+			]
+		}, 
+		{
+			"name": "安装留存", 
+			"sub_button": [
+				{
+					"type": "click", 
+					"name": "FB安装量", 
+					"key": "install", 
+					"sub_button": [ ]
+				}, 
+				{
+					"type": "click", 
+					"name": "AG安装量", 
+					"key": "a_install", 
+					"sub_button": [ ]
+				}, 
+				{
+					"type": "click", 
+					"name": "KG安装量", 
+					"key": "k_install", 
+					"sub_button": [ ]
+				}, 
+				{
+					"type": "click", 
+					"name": "DE安装量", 
+					"key": "de_install", 
+					"sub_button": [ ]
+				}, 
+				{
+					"type": "click", 
+					"name": "FR安装量", 
+					"key": "fr_install", 
+					"sub_button": [ ]
+				}
+			]
+		}, 
+		{
+			"name": "帮助", 
+			"sub_button": [
+				{
+					"type": "click", 
+					"name": "TD计划", 
+					"key": "week_work", 
+					"sub_button": [ ]
+				}, 
+				{
+					"type": "click", 
+					"name": "邮件BUG", 
+					"key": "a_mailReport", 
+					"sub_button": [ ]
+				}, 
+				{
+					"type": "click", 
+					"name": "美国时间", 
+					"key": "us_time", 
+					"sub_button": [ ]
+				}, 
+				{
+					"type": "click", 
+					"name": "紧急联络", 
+					"key": "connect", 
+					"sub_button": [ ]
+				}, 
+				{
+					"type": "click", 
+					"name": "*语音操作", 
+					"key": "addVoice", 
+					"sub_button": [ ]
+				}
+			]
+		}
+	]
+}
+
+
+ 
+ 
