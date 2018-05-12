@@ -1,0 +1,57 @@
+## Linux常见目录使用区别
+
+* usr/bin  			-  系统预装的程序，随着版本升级会更新
+* usr/local/bin 	-  用户自定义安装的程序
+* usr/sbin  		-  存放用于系统恢复，系统启动，系统维护等程序
+ 
+* lib				- 这些都是服务bin目录的动态库
+* usr/lib	
+* usr/local/lib
+
+## 启动服务的命令
+* 启动某服务	service httpd start	 		systemctl start httpd.service
+* 停止某服务	service httpd stop	 		systemctl stop httpd.service
+* 重启某服务	service httpd restart	 	systemctl restart httpd.service
+
+## 常用liunx命令
+查看磁盘空间
+df -m
+
+查看目录文件大小并排序
+ll -lhS
+
+查看整个目录文件大小
+du -ha 目录名
+
+过滤匹配文件内容
+grep xxx.txt
+
+
+只显示前10行
+head -n10 access.log | awk '/page/ {print $1 $4 $5 $6 $7 $8}'
+
+匹配查询内容
+awk '/page/ {print $1 $4 $5 $6 $7 $8}'
+
+
+## 远程ssh访问
+1，xshell 账号密码或者证书
+2，ssh -i id_rsa root@115.159.72.63 这样也可以
+
+## 常用liunx命令
+
+1，df -h -m | 查看磁盘可用
+   > disk free
+   
+2，du -m
+   > disk used
+
+3，free -m  | 查看内存使用
+
+4，find -name "*.php"  | 找文件
+
+5， curl ipinfo.io
+	curl ip.cn
+	curl myip.ipip.net
+
+6，	

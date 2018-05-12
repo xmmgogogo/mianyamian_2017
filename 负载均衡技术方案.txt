@@ -1,0 +1,31 @@
+-负载均衡
+ - DNS
+	1，​使用 DNS 做负载均衡的好处是比较方便，成本低，不用单独维护负载均衡服务器，只需要在DNS服务商提供的后台进行配置即可
+	2，DNS 域名映射存在多级缓存的问题，刷新不及时
+	
+ - LVS + keeplive
+ 
+ - Nginx
+	1，Nginx 以其优异的性能，不仅作为 web 服务器使用，也常被作为负载均衡器来使用
+	2，一台硬件负载均衡服务器动辄十几万几十万，其价格都可以购买十几台普通服务器了，当服务规模并不大时，直接采购硬件负载均衡服务器对于很多中小公司是很不划算的
+	3，一般 web 服务器都有反向代理功能，Nginx 是其中典型代表
+	
+	http {
+		upstream app_group {
+			(least_conn|least_time|ip_hash) 	# Nginx 自带多种转发策略
+			server 192.168.56.102;
+			server 192.168.56.103;
+			server 192.168.56.104;
+		}
+
+		server {
+			listen 80;
+			server_name  www.example.com;
+
+			location / {
+				proxy_pass http://app_group;
+			}
+		}
+	}
+	
+ - HAProxy
