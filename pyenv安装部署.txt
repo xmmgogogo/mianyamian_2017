@@ -1,0 +1,13 @@
+
+
+
+
+
+
+
+
+pyenv version #显示当前使用的Python 
+pyenv which python #显示当前Python的安裝路径 
+pyenv global #设置默认的Python版本 
+pyenv local #在当前路径创建一个.python-version，以后进入这个目录自动切换为该版本 
+pyenv shell #在当前shell的session中启用某个Python版本，优先级高于global,local

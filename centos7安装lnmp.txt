@@ -1,7 +1,13 @@
 /**
 
-第一步一定要修改centos的yum源，这样速度会快很多：
+第一步一定要修改centos的yum源，这样速度会快很多：(见印象笔记)
 修改yum的源：https://blog.csdn.net/ltx06/article/details/78030056
+
+Ubuntu：
+修改yum的源：https://blog.csdn.net/pingsoli/article/details/68128188
+----------------------------------------------------
+
+** 若下载源不存在，可以自定义下载源：/etc/yum.repos.d/mongodb-3.4.repo
 
 ----------------------------------------------------
 yum list installed 查看已安装的包
@@ -97,6 +103,7 @@ yum -c /etc/yum.conf –installroot=/root/dev/test –releasever=/ -y install co
 	1，首先可以开启php-fpm的错误display_errror:on 这样就可以直接看到错误，默认是关闭的。
 	2，注意php-fpm.conf和php-fpm.d/www.conf以及php.ini之间的关系
 	
+	
 	PS:网上提供了一种启动php-fpm方式
 	# 测试php-fpm配置
 	/usr/sbin/php-fpm -t
@@ -107,6 +114,19 @@ yum -c /etc/yum.conf –installroot=/root/dev/test –releasever=/ -y install co
 	
 	#关闭php-fpm
 	直接kill
+	 
+	# 扩展安装方式
+	yum install php71u-mysqld
+	
+	redis的编译和php扩展支持 - 亲测有效
+	https://www.centos.bz/2017/08/centos-7-install-redis-php-redis/
+	补充：1，安装完成后，启动redis-server前，创建redis.conf文件 首先拷贝解压包下的redis.conf文件至/etc/redis 
+	（参考URL：https://blog.csdn.net/ludonqin/article/details/47211109）
+		  2，redis-server /etc/redis/redis.conf 带上配置文件启动	
+	
+	注意点1：手动编译redis扩展需要phpize，然后会提示安装： yum install php71u-devel 支持。
+	注意点2：./configure --with-php-config=/usr/bin/php-config 这里会提示需要php-config其实这是个脚本，跟php同一个目录
+	
 	 
 	--------------------------------
 	如果没有fpm，则通过这里重新安装：https://www.cnblogs.com/beyang/p/6972412.html
@@ -127,32 +147,66 @@ yum -c /etc/yum.conf –installroot=/root/dev/test –releasever=/ -y install co
 	
 	yum install --enablerepo=remi,remi-php56 php php-opcache php-pecl-apcu php-devel php-mbstring php-mcrypt php-mysqlnd php-phpunit-PHPUnit php-pecl-xdebug php-pecl-xhprof php-pdo php-pear php-fpm php-cli php-xml php-bcmath php-process php-gd php-common
 
+- 安装postgresql(已试验可行)
+	参考网址URL：https://www.cnblogs.com/stulzq/p/7766409.html
+	
+	修改外网可以访问postgreSQL
+	参考URL:https://blog.csdn.net/DaSo_CSDN/article/details/75330009
+	
+	* vi /var/lib/pgsql/9.6/data/postgresql.conf
+	* listen_addresses,localhost改为*即可,如果想仅对部分IP开放，多个IP之间用,
+	* vi /var/lib/pgsql/9.6/data/pg_hba.conf
+	* IPv4 local connections | host all all 0.0.0.0/0 md5
+	* systemctl restart postgresql-9.6.service
+
+#######################运维软件#################################
+- supervisor监控软件 （参考URL：https://blog.csdn.net/xyang81/article/details/51555473）超级详细
+					  （参考redis管理：http://www.jb51.net/article/122534.htm）
+	* 安装：yum install python | supervisor用Python开发的一个client/server服务，能启动和管理进程。
+	* 安装：easy_install supervisor
+	* 配置：mkdir /etc/supervisor
+			echo_supervisord_conf > /etc/supervisor/supervisord.conf
+	* 配置应用：为每个应用分配一个配置文件		
+	* 启动：supervisord -c /etc/supervisor/supervisord.conf
+		@@@老坑@@@ - 要打开include前面的注释，我日。。。。。。。
+		[include]
+		;files = relative/directory/*.ini
+		files = /etc/supervisor/config.d/*.ini
+
+- 安装ifconfig(最小化安装可能没这些命令)
+	yum install net-tools
 
 #######################系统级安装#################################
+0，centos7 经常碰到很多包没用的情况【这个第三方源很好用哦】
+非官方的yum推荐用fedora的epel仓库。epel (Extra Packages for Enterprise Linux)是基于Fedora的一个项目，该仓库下有非常多的软件，建议安装。
+yum install epel-release
 
-一. gcc 安装
+1，gcc 安装
 安装 nginx 需要先将官网下载的源码进行编译，编译依赖 gcc 环境，如果没有 gcc 环境，则需要安装：
 
 yum install gcc-c++
 
-二. PCRE pcre-devel 安装
+2，PCRE pcre-devel 安装
 PCRE(Perl Compatible Regular Expressions) 是一个Perl库，包括 perl 兼容的正则表达式库。nginx 的 http 模块使用 pcre 来解析正则表达式，所以需要在 linux 上安装 pcre 库，pcre-devel 是使用 pcre 开发的一个二次开发库。nginx也需要此库。命令：
 注意：EPEL（Extra Packages for Enterprise Linux，企业版Linux的额外软件包）是一个由特别兴趣小组创建、维护并管理的，针对 红帽企业版 Linux(RHEL)及其衍生发行版(比如 CentOS、Scientific Linux、Oracle Enterprise Linux)的一个高质量附加软件包项目。
 
 yum install -y pcre pcre-devel
 
-三. zlib 安装
+3，zlib 安装
 zlib 库提供了很多种压缩和解压缩的方式， nginx 使用 zlib 对 http 包的内容进行 gzip ，所以需要在 Centos 上安装 zlib 库。
 
 yum install -y zlib zlib-devel
 
-四. OpenSSL 安装
+4，OpenSSL 安装
 OpenSSL 是一个强大的安全套接字层密码库，囊括主要的密码算法、常用的密钥和证书封装管理功能及 SSL 协议，并提供丰富的应用程序供测试或其它目的使用。
 nginx 不仅支持 http 协议，还支持 https（即在ssl协议上传输http），所以需要在 Centos 安装 OpenSSL 库。
 
 yum install -y openssl openssl-devel
 
-五，工具安装篇
+
+
+
+#######################工具安装篇#################################
 1，解压zip文件
 unzip --> yum install unzip
 # unzip aaa.zip -d tmp
@@ -167,12 +221,5 @@ lrzsz --> yum install lrzsz
 1，在centos下启动nginx出现Failed to start nginx.service:unit not found 错误的原因就是没有添加nginx服务，所以启动失败。
 https://www.cnblogs.com/ansibee/p/8087476.html
 
-2，
-
-
-
-
-
-
-
-
+2，DOCK安装
+	curl -sSL https://get.docker.com/ | sh
